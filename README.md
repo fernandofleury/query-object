@@ -27,7 +27,7 @@ queryObject.destroy();
 
 ## Support
 
-queryObject works Chrome, Firefox, Safari, Opera and IE 10+ (All tested).
+queryObject works on Chrome, Firefox, Safari, Opera and IE 9+ (All tested).
 In fact its really easy to provide a fallback for it, all you have to do is replace the forEach and Object.key functions.
 
 ## License
