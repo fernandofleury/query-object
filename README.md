@@ -1,6 +1,6 @@
 # query-object
 
-Easy query-string manipulation via Objects (using JavaScript)
+Easy query string manipulation via Objects (using JavaScript)
 
 
 ## Getting Started
@@ -10,19 +10,19 @@ The query-object operates under queryObject name, with the following methods:
 
 ```javascript
 queryObject.get();
-// returns the current query-string;
+// returns the current query string;
 
 queryObject.set(Object);
-// accepts an object to set (it will remove the current query-string) the query-string
+// accepts an object to set (it will remove the current query string) the query string
 
 queryObject.add(Object);
-// adds a new property to the current query-string;
+// adds a new property to the current query string;
 
 queryObject.remove(String or Array);
 // removes a property or an array of properties based on the parameter.
 
 queryObject.destroy();
-// removes the current query-string;
+// removes the current query string;
 ```
 
 ## Support
