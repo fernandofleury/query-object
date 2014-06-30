@@ -1,6 +1,6 @@
 # query-object
 
-Easy query string manipulation via Objects (using JavaScript)
+Easy url query string manipulation via Objects (using JavaScript)
 
 
 ## Getting Started
@@ -8,21 +8,46 @@ Easy query string manipulation via Objects (using JavaScript)
 Simply place the query-object.js on your html file and you are good to go.
 The query-object operates under queryObject name, with the following methods:
 
+
+### get();
+Returns the current query string;
+
 ```javascript
+// url: http://localhost.com?foo=bar
 queryObject.get();
-// returns the current query string;
+// returns {foo: "bar"}
+```
 
-queryObject.set(Object);
-// accepts an object to set (it will remove the current query string) the query string
+### set(Object);
+Accepts an object to set the query string (it will remove the current query string)
 
-queryObject.add(Object);
-// adds a new property to the current query string;
+```javascript
+queryObject.set({bar: "bar", foo: "foo"});
+// url: http://localhost.com?bar=bar&foo=foo
+```
 
-queryObject.remove(String or Array);
-// removes a property or an array of properties based on the parameter.
+### add(Object);
+Adds a new property to the current query string;
 
+```javascript
+queryObject.add({baz: "baz"});
+// url: http://localhost.com?bar=bar&foo=foo&baz=baz
+```
+
+### remove(String or Array);
+Removes a property or an array of properties based on the parameter.
+
+```javascript
+queryObject.remove("foo");
+// url http://localhost.com?bar=bar&baz=baz
+```
+
+### destroy();
+Clears the current query string
+
+```javascript
 queryObject.destroy();
-// removes the current query string;
+// url: http://localhost.com?
 ```
 
 ## Support
