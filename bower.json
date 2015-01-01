@@ -1,0 +1,31 @@
+{
+  "name": "query-object",
+  "version": "0.0.1",
+  "homepage": "https://github.com/fernandofleury/query-object",
+  "authors": [
+    "Fernando Fleury <fernando_fleury@hotmail.com>"
+  ],
+  "description": "Easy url query string manipulation via Objects (using JavaScript)",
+  "main": "src/query-object.js",
+  "keywords": [
+    "query",
+    "querystrings",
+    "querystring",
+    "query",
+    "string",
+    "url",
+    "url-manipulation",
+    "manipulation",
+    "params",
+    "parameters",
+    "qs"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
