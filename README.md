@@ -4,9 +4,23 @@ Easy url query string manipulation via Objects (using JavaScript)
 
 
 ## Getting Started
+You can install via NPM:
 
-Simply place the query-object.js on your html file and you are good to go.
-The query-object operates under queryObject name, with the following methods:
+```javascript
+npm install query-object --save-dev
+```
+
+Then require it on your js:
+
+```javascript
+var queryObject = Require('query-object');
+```
+
+Or you can install it via Bower:
+
+```javascript
+bower install query-object --save
+```
 
 
 ### get();
