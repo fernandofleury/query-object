@@ -6,7 +6,7 @@
     "Fernando Fleury <fernando_fleury@hotmail.com>"
   ],
   "description": "Easy url query string manipulation via Objects (using JavaScript)",
-  "main": "src/query-object.js",
+  "main": "query-object.js",
   "keywords": [
     "query",
     "querystrings",
