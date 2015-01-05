@@ -40,11 +40,22 @@
   };
 
   /**
-   * return the current query string
+   * return the current query string as a key/value object
    * @return {object}
    */
   _self.get = function() {
-    return _env.location.search;
+    if (!_env.location.search) {
+      return {};
+    }
+    var query = _env.location.search.substring(1).split('&'),
+      obj = {};
+
+    query.forEach(function(param) {
+      param = param.replace(/[%20|\s]/g, '_').split('=');
+      obj[decodeURIComponent(param[0])] = (param[1] ? decodeURIComponent(param[1]) : undefined);
+    });
+
+    return obj;
   };
 
   // returning factory instance
