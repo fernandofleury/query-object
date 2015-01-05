@@ -5,13 +5,16 @@ describe('query-object clear spec', function() {
     location: {}
   };
 
+  // setting custom env for test cases
   beforeEach(function() {
-    _env.location.search = 'foo=bar';
+    _env.location.search = '?foo=bar';
+
     queryObject._setEnv(_env);
   });
 
   it('should clear the query string', function() {
     queryObject.clear();
-    expect(queryObject.get()).toBe('');
+    
+    expect(queryObject.get()).toEqual({});
   });
 });
