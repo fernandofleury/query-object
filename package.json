@@ -28,5 +28,11 @@
   "bugs": {
     "url": "https://github.com/fernandofleury/query-object/issues"
   },
-  "homepage": "https://github.com/fernandofleury/query-object"
+  "homepage": "https://github.com/fernandofleury/query-object",
+  "devDependencies": {
+    "jasmine-core": "^2.1.3",
+    "karma": "^0.12.31",
+    "karma-jasmine": "^0.3.4",
+    "karma-phantomjs-launcher": "^0.1.4"
+  }
 }
