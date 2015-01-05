@@ -1,6 +1,6 @@
 {
   "name": "query-object",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Easy url query string manipulation via Objects (using JavaScript)",
   "main": "query-object.js",
   "scripts": {

@@ -1,6 +1,6 @@
 {
   "name": "query-object",
-  "version": "0.0.2",
+  "version": "1.0.1",
   "homepage": "https://github.com/fernandofleury/query-object",
   "authors": [
     "Fernando Fleury <fernando_fleury@hotmail.com>"
@@ -24,8 +24,8 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "package.json",
     ".npmignore",
+    "package.json",
     "bower_components",
     "test",
     "tests"
