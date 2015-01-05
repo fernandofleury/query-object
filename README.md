@@ -22,6 +22,7 @@ Or you can install it via Bower:
 bower install query-object --save
 ```
 
+## Available Methods
 
 ### get();
 Returns the current query string;
