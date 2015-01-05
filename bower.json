@@ -25,6 +25,7 @@
     "**/.*",
     "node_modules",
     "package.json",
+    ".npmignore",
     "bower_components",
     "test",
     "tests"
