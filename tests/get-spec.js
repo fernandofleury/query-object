@@ -1,4 +1,4 @@
-describe('get() method spec', function() {
+describe('get() method', function() {
 
   // fake context
   var _env = {
@@ -12,8 +12,8 @@ describe('get() method spec', function() {
     queryObject._setEnv(_env);
   });
 
-  it('should be an empty object', function() {
-    expect(queryObject.get()).toEqual({});
+  it('should be undefined', function() {
+    expect(queryObject.get()).toBeUndefined();
   });
 
   it('should a key object only', function() {

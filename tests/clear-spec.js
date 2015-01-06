@@ -1,4 +1,4 @@
-describe('query-object clear spec', function() {
+describe('clear() method', function() {
 
   // fake context
   var _env = {
@@ -14,7 +14,7 @@ describe('query-object clear spec', function() {
 
   it('should clear the query string', function() {
     queryObject.clear();
-    
-    expect(queryObject.get()).toEqual({});
+
+    expect(queryObject.get()).toBeUndefined();
   });
 });
