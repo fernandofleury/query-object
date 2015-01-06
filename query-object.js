@@ -4,7 +4,7 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function') {
+  if (typeof define === 'function' && define.amd) {
     define(['query-object'], factory);
   } else if (typeof exports === 'object') {
     module.exports = factory();
@@ -20,6 +20,8 @@
    */
   var _self = {},
     _env = _env || window;
+
+  _self.useHistory = false;
 
   /**
    * High-convenience test method to set current context since we can't reload during tests
@@ -46,7 +48,7 @@
    */
   _self.get = function(key) {
     if (!_env.location.search) {
-      return {};
+      return undefined;
     }
     var query = _env.location.search.substring(1).split('&'),
       obj = {};
@@ -71,8 +73,25 @@
       return obj[key] || undefined;
     }
 
-
     return obj;
+  };
+
+  _self.set = function(obj) {
+    if(!obj || typeof obj !== 'object') {
+      return undefined;
+    }
+
+    var query = '', prop;
+
+    for(prop in obj) {
+      query += encodeURIComponent(prop);
+      if(obj[prop]) {
+        query += '=' + encodeURIComponent(obj[prop]);
+      }
+      query += '&';
+    }
+
+    return query.slice(0, -1);
   };
 
   // returning factory instance
