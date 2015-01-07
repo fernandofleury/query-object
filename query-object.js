@@ -21,6 +21,9 @@
   var _self = {},
     _env = _env || window;
 
+  /**
+   * TODO HTML5HistoryAPI definition
+   */
   _self.useHistory = false;
 
   /**
@@ -50,6 +53,7 @@
     if (!_env.location.search) {
       return undefined;
     }
+
     var query = _env.location.search.substring(1).split('&'),
       obj = {};
 
@@ -76,6 +80,12 @@
     return obj;
   };
 
+
+  /**
+   * Sets the query string
+   * @param {Object} Object to set the new query string.
+   * @returns {String|Undefined} Returns the new query string if an object was provided, otherwise returns undefined.
+   */
   _self.set = function(obj) {
     if(!obj || typeof obj !== 'object') {
       return undefined;
@@ -91,7 +101,7 @@
       query += '&';
     }
 
-    return query.slice(0, -1);
+    return (_env.location.search = query.slice(0, -1));
   };
 
   // returning factory instance
