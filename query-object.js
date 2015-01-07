@@ -51,7 +51,7 @@
    */
   _self.get = function(key) {
     if (!_env.location.search) {
-      return undefined;
+      return;
     }
 
     var query = _env.location.search.substring(1).split('&'),
@@ -88,7 +88,7 @@
    */
   _self.set = function(obj) {
     if(!obj || typeof obj !== 'object') {
-      return undefined;
+      return;
     }
 
     var query = '', prop;
@@ -102,6 +102,24 @@
     }
 
     return (_env.location.search = query.slice(0, -1));
+  };
+
+  /**
+   * Adds the provided object to the current query string
+   * @param {Object} The object to be added.
+   * @returns {String|Undefined} Returns the new query string if an object was provided, otherwise returns undefined.
+   */
+  _self.add = function(obj) {
+    if(!obj || typeof obj !== 'object') {
+      return;
+    }
+    var query = _self.get(), prop;
+
+    for(prop in obj) {
+      query[prop] = obj[prop];
+    }
+
+    return _self.set(query);
   };
 
   // returning factory instance
