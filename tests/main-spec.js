@@ -2,8 +2,30 @@ describe('query-object main spec', function() {
 
   describe('query-object methods verification', function() {
 
+    beforeEach(function() {
+      queryObject.useHistory = false;
+    });
+
     it('should be defined', function() {
       expect(queryObject).toBeDefined();
+    });
+
+    it('should enable history usage', function() {
+      queryObject.useHistory = true;
+
+      expect(queryObject.useHistory).toBe(true);
+    });
+
+    it('should change the history method to replaceState', function() {
+      queryObject.historyMethod = 'replaceState';
+
+      expect(queryObject.historyMethod).toBe('replaceState');
+    });
+
+    it('should change the history method to pushState', function() {
+      queryObject.historyMethod = 'pushState';
+
+      expect(queryObject.historyMethod).toBe('pushState');
     });
 
     it('should have a clear method', function() {
@@ -18,7 +40,7 @@ describe('query-object main spec', function() {
       expect(queryObject.set).toBeDefined();
     });
 
-    it('should have a add method', function() {
+    it('should have an add method', function() {
       expect(queryObject.add).toBeDefined();
     });
 

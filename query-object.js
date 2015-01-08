@@ -22,17 +22,18 @@
     _ctx = _ctx || window;
 
   /**
-   * TODO HTML5HistoryAPI definition
+   * Defines the usage of HTML5HistoryAPI for all methods
    */
   _self.useHistory = false;
+  _self.historyMethod = 'pushState';
 
   /**
-   * High-convenience test method to set current context since we can't reload during tests
-   * @param {Object} new env
-   * @returns {Object} new env
+   * High-convenience test method to set current context since we can't reload using old location.search during tests
+   * @param {Object} new context
+   * @returns {Object} new context
    */
-  _self._setContext = function(env) {
-    _ctx = env || _ctx;
+  _self._setContext = function(ctx) {
+    _ctx = ctx || _ctx;
     return _ctx;
   };
 
@@ -86,12 +87,13 @@
    * @param {Object} Object to set the new query string.
    * @returns {String|Undefined} Returns the new query string if an object was provided, otherwise returns undefined.
    */
-  _self.set = function(obj) {
+  _self.set = function(obj, config) {
     if (!obj || typeof obj !== 'object') {
       return;
     }
 
     var query = '',
+      href = location.href,
       prop;
 
     for (prop in obj) {
@@ -102,7 +104,15 @@
       query += '&';
     }
 
-    return (_ctx.location.search = query.slice(0, -1));
+    query = query.slice(0, -1);
+
+    if (this.useHistory || typeof config === 'object') {
+      href = href.indexOf('?') ? href.substr(0, href.indexOf('?')) : href;
+      history[_self.historyMethod](null, document.title, href + '?' + query);
+      return query;
+    }
+
+    return (_ctx.location.search = query);
   };
 
   /**
