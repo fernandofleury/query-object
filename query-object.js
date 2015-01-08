@@ -19,7 +19,7 @@
    * @type {Object}
    */
   var _self = {},
-    _env = _env || window;
+    _ctx = _ctx || window;
 
   /**
    * TODO HTML5HistoryAPI definition
@@ -31,9 +31,9 @@
    * @param {Object} new env
    * @returns {Object} new env
    */
-  _self._setEnv = function(env) {
-    _env = env || _env;
-    return _env;
+  _self._setContext = function(env) {
+    _ctx = env || _ctx;
+    return _ctx;
   };
 
   /**
@@ -41,7 +41,7 @@
    * @returns {undefined}
    */
   _self.clear = function(prop) {
-    _env.location.search = '';
+    _ctx.location.search = '';
   };
 
   /**
@@ -50,11 +50,11 @@
    * @returns {Object|String|Undefined} If an array was provided then an object with the matched keys will be returned, otherwise a string or undefined will be returned.
    */
   _self.get = function(key) {
-    if (!_env.location.search) {
+    if (!_ctx.location.search) {
       return;
     }
 
-    var query = _env.location.search.substring(1).split('&'),
+    var query = _ctx.location.search.substring(1).split('&'),
       obj = {};
 
     query.forEach(function(param) {
@@ -102,7 +102,7 @@
       query += '&';
     }
 
-    return (_env.location.search = query.slice(0, -1));
+    return (_ctx.location.search = query.slice(0, -1));
   };
 
   /**

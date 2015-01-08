@@ -1,15 +1,15 @@
 describe('get() method', function() {
 
   // fake context
-  var _env = {
+  var _ctx = {
     location: {}
   };
 
   // setting custom env for test cases
   beforeEach(function() {
-    _env.location.search = '';
+    _ctx.location.search = '';
 
-    queryObject._setEnv(_env);
+    queryObject._setContext(_ctx);
   });
 
   it('should be undefined', function() {
@@ -17,43 +17,43 @@ describe('get() method', function() {
   });
 
   it('should a key object only', function() {
-    _env.location.search = '?foo';
+    _ctx.location.search = '?foo';
 
     expect(queryObject.get()).toEqual({foo: undefined});
   });
 
   it('should return a key/value object', function() {
-    _env.location.search = '?foo=bar';
+    _ctx.location.search = '?foo=bar';
 
     expect(queryObject.get()).toEqual({foo: 'bar'});
   });
 
   it('should return a key/value, key only object', function() {
-    _env.location.search = '?foo=bar&baz';
+    _ctx.location.search = '?foo=bar&baz';
 
     expect(queryObject.get()).toEqual({foo: 'bar', baz: undefined});
   });
 
   it('should convert the unicode space for a space', function() {
-    _env.location.search = '?foo=bar%20baz';
+    _ctx.location.search = '?foo=bar%20baz';
 
     expect(queryObject.get()).toEqual({foo: 'bar baz'});
   });
 
   it('should return a list of properties based on an array', function() {
-    _env.location.search = '?foo=foo&bar&baz=baz';
+    _ctx.location.search = '?foo=foo&bar&baz=baz';
 
     expect(queryObject.get(['foo', 'bar'])).toEqual({foo: 'foo', bar: undefined});
   });
 
   it('should return a property based on a string', function() {
-    _env.location.search = '?foo=foo&bar=bar&baz=baz';
+    _ctx.location.search = '?foo=foo&bar=bar&baz=baz';
 
     expect(queryObject.get('bar')).toEqual('bar');
   });
 
   it('should return an empty string', function() {
-    _env.location.search = '?foo=foo';
+    _ctx.location.search = '?foo=foo';
 
     expect(queryObject.get('bar')).toBeUndefined();
   });

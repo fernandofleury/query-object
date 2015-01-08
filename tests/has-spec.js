@@ -1,21 +1,21 @@
 describe('has() method', function() {
 
   // fake context
-  var _env = {
+  var _ctx = {
     location: {}
   };
 
   beforeEach(function() {
-    queryObject._setEnv(_env);
+    queryObject._setContext(_ctx);
   });
 
   it('should return TRUE for an existing property', function() {
-    _env.location.search = '?foo=foo&bar';
+    _ctx.location.search = '?foo=foo&bar';
     expect(queryObject.has('foo')).toBe(true);
   });
 
   it('should return FALSE for a non existing property', function() {
-    _env.location.search = '?bar=bar';
+    _ctx.location.search = '?bar=bar';
     expect(queryObject.has('foo')).toBe(false);
   });
 

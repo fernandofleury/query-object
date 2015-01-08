@@ -1,13 +1,13 @@
 describe('set() method', function() {
 
   // fake context
-  var _env = {
+  var _ctx = {
     location: {}
   };
 
   // setting custom env for test cases
   beforeEach(function() {
-    queryObject._setEnv(_env);
+    queryObject._setContext(_ctx);
   });
 
   it('should return undefined when no arguments are provided', function(){

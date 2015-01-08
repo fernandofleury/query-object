@@ -1,17 +1,17 @@
 describe('add() method', function() {
 
   // fake context
-  var _env = {
+  var _ctx = {
     location: {}
   };
 
   // setting custom env for test cases
   beforeEach(function() {
-    queryObject._setEnv(_env);
+    queryObject._setContext(_ctx);
   });
 
   it('should add the object to the query string', function(){
-    _env.location.search = '?foo=foo';
+    _ctx.location.search = '?foo=foo';
     expect(queryObject.add({bar: 'bar'})).toBe('foo=foo&bar=bar');
   });
 

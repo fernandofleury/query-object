@@ -1,15 +1,15 @@
 describe('clear() method', function() {
 
   // fake context
-  var _env = {
+  var _ctx = {
     location: {}
   };
 
   // setting custom env for test cases
   beforeEach(function() {
-    _env.location.search = '?foo=bar';
+    _ctx.location.search = '?foo=bar';
 
-    queryObject._setEnv(_env);
+    queryObject._setContext(_ctx);
   });
 
   it('should clear the query string', function() {
