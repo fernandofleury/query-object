@@ -1,4 +1,4 @@
-describe('set() method', function() {
+describe('add() method', function() {
 
   // fake context
   var _env = {

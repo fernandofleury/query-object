@@ -122,6 +122,31 @@
     return _self.set(query);
   };
 
+
+  /**
+   * Removes the current property or propeties of the current query string
+   * @param  {String|Array} A string or an array of properties to be removed.
+   * @return {String|Undefined} Returns the new query string or undefined if the param isn't provided correctly.
+   */
+  _self.remove = function(param) {
+    if(!param || !param.length) {
+      return;
+    }
+    var query = _self.get();
+
+    if(Array.isArray(param)) {
+      param.forEach(function(param){
+        delete query[param];
+      });
+    }
+
+    if(typeof param === 'string') {
+      delete query[param];
+    }
+    
+    return _self.set(query);
+  };
+
   // returning factory instance
   return _self;
 });

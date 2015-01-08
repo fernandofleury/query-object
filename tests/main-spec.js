@@ -13,5 +13,17 @@ describe('query-object main spec', function() {
     it('should have a get method', function() {
       expect(queryObject.get).toBeDefined();
     });
+
+    it('should have a set method', function() {
+      expect(queryObject.set).toBeDefined();
+    });
+
+    it('should have a add method', function() {
+      expect(queryObject.add).toBeDefined();
+    });
+
+    it('should have a remove method', function() {
+      expect(queryObject.remove).toBeDefined();
+    });
   });
 });
