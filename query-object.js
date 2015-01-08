@@ -87,15 +87,16 @@
    * @returns {String|Undefined} Returns the new query string if an object was provided, otherwise returns undefined.
    */
   _self.set = function(obj) {
-    if(!obj || typeof obj !== 'object') {
+    if (!obj || typeof obj !== 'object') {
       return;
     }
 
-    var query = '', prop;
+    var query = '',
+      prop;
 
-    for(prop in obj) {
+    for (prop in obj) {
       query += encodeURIComponent(prop);
-      if(obj[prop]) {
+      if (obj[prop]) {
         query += '=' + encodeURIComponent(obj[prop]);
       }
       query += '&';
@@ -110,12 +111,13 @@
    * @returns {String|Undefined} Returns the new query string if an object was provided, otherwise returns undefined.
    */
   _self.add = function(obj) {
-    if(!obj || typeof obj !== 'object') {
+    if (!obj || typeof obj !== 'object') {
       return;
     }
-    var query = _self.get(), prop;
+    var query = _self.get(),
+      prop;
 
-    for(prop in obj) {
+    for (prop in obj) {
       query[prop] = obj[prop];
     }
 
@@ -126,25 +128,33 @@
   /**
    * Removes the current property or propeties of the current query string
    * @param  {String|Array} A string or an array of properties to be removed.
-   * @return {String|Undefined} Returns the new query string or undefined if the param isn't provided correctly.
+   * @return {String|Undefined} Returns the new query string or undefined if the param isn't provided as expected.
    */
   _self.remove = function(param) {
-    if(!param || !param.length) {
+    if (!param || !param.length) {
       return;
     }
     var query = _self.get();
 
-    if(Array.isArray(param)) {
-      param.forEach(function(param){
+    if (Array.isArray(param)) {
+      param.forEach(function(param) {
         delete query[param];
       });
     }
 
-    if(typeof param === 'string') {
+    if (typeof param === 'string') {
       delete query[param];
     }
-    
+
     return _self.set(query);
+  };
+
+  _self.has = function(prop) {
+    if (!prop || typeof prop !== 'string') {
+      return;
+    }
+    var query = _self.get();
+    return query.hasOwnProperty(prop);
   };
 
   // returning factory instance

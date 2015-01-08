@@ -25,5 +25,9 @@ describe('query-object main spec', function() {
     it('should have a remove method', function() {
       expect(queryObject.remove).toBeDefined();
     });
+
+    it('should have a has method', function() {
+      expect(queryObject.has).toBeDefined();
+    });
   });
 });
