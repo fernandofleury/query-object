@@ -38,7 +38,7 @@ describe('set() method', function() {
     })).toBe('foo=foo&bar=bar');
   });
 
-  it('should use history to set the query string', function() {
+  it('should use history via default config to set the query string', function() {
     queryObject._setContext(window);
     queryObject.useHistory = true;
     queryObject.set({
