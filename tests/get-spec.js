@@ -19,31 +19,43 @@ describe('get() method', function() {
   it('should a key object only', function() {
     _ctx.location.search = '?foo';
 
-    expect(queryObject.get()).toEqual({foo: undefined});
+    expect(queryObject.get()).toEqual({
+      foo: undefined
+    });
   });
 
   it('should return a key/value object', function() {
     _ctx.location.search = '?foo=bar';
 
-    expect(queryObject.get()).toEqual({foo: 'bar'});
+    expect(queryObject.get()).toEqual({
+      foo: 'bar'
+    });
   });
 
   it('should return a key/value, key only object', function() {
     _ctx.location.search = '?foo=bar&baz';
 
-    expect(queryObject.get()).toEqual({foo: 'bar', baz: undefined});
+    expect(queryObject.get()).toEqual({
+      foo: 'bar',
+      baz: undefined
+    });
   });
 
   it('should convert the unicode space for a space', function() {
     _ctx.location.search = '?foo=bar%20baz';
 
-    expect(queryObject.get()).toEqual({foo: 'bar baz'});
+    expect(queryObject.get()).toEqual({
+      foo: 'bar baz'
+    });
   });
 
   it('should return a list of properties based on an array', function() {
     _ctx.location.search = '?foo=foo&bar&baz=baz';
 
-    expect(queryObject.get(['foo', 'bar'])).toEqual({foo: 'foo', bar: undefined});
+    expect(queryObject.get(['foo', 'bar'])).toEqual({
+      foo: 'foo',
+      bar: undefined
+    });
   });
 
   it('should return a property based on a string', function() {

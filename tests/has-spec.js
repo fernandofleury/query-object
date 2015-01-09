@@ -11,11 +11,13 @@ describe('has() method', function() {
 
   it('should return TRUE for an existing property', function() {
     _ctx.location.search = '?foo=foo&bar';
+
     expect(queryObject.has('foo')).toBe(true);
   });
 
   it('should return FALSE for a non existing property', function() {
     _ctx.location.search = '?bar=bar';
+    
     expect(queryObject.has('foo')).toBe(false);
   });
 

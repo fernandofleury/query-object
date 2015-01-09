@@ -10,16 +10,19 @@ describe('add() method', function() {
     queryObject._setContext(_ctx);
   });
 
-  it('should add the object to the query string', function(){
+  it('should add the object to the query string', function() {
     _ctx.location.search = '?foo=foo';
-    expect(queryObject.add({bar: 'bar'})).toBe('foo=foo&bar=bar');
+
+    expect(queryObject.add({
+      bar: 'bar'
+    })).toBe('foo=foo&bar=bar');
   });
 
-  it('should return undefined when no object is provided', function(){
+  it('should return undefined when no object is provided', function() {
     expect(queryObject.add()).toBeUndefined();
   });
 
-  it('should return undefined when the provided argument isn\'t an object', function(){
+  it('should return undefined when the provided argument isn\'t an object', function() {
     expect(queryObject.add('foo')).toBeUndefined();
   });
 });
