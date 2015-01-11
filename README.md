@@ -13,16 +13,16 @@ bower install query-object
 
 ## API
 
-### useHistory (boolean)
-Defines the usage of HTML5HistoryAPI for all methods. 
+### useHistory
+Defines the usage of HTML5HistoryAPI for modifier methods.
 DEFAULT: false
 
 ```javascript
 queryObject.useHistory = true;
 ```
 
-### setContext()
-High-convenience test method to set current context since we can't reload using old location.search during tests
+### setContext(object)
+High-convenience test method to set current context since we can't reload using old location.search during tests.
 
 ```javascript
 fakeContext = {};
@@ -31,8 +31,75 @@ queryObject.setContext(fakeContext);
 // returns the new context;
 ``` 
 
+### clear()
+Clears the current query string
+
+```javascript
+queryObject.clear();
+// returns undefined
+```
+
+### get(string|array)
+Returns the current query string as a key/value object. If an array was provided then an object with the matched keys will be returned, otherwise a string or undefined will be returned.
+
+```javascript
+// ?foo=foo&bar=bar&baz
+
+queryObject.get();
+// returns {foo: 'foo', bar: 'bar', baz: undefined}
+
+queryObject.get('foo');
+// returns {foo: 'foo'}
+
+queryObject.get(['foo', 'bar']);
+// returns {foo: 'foo', bar: 'bar'}
+```
+
+### set(object)
+Sets the query string. Returns the new query string if an object was provided, otherwise returns undefined.
+
+```javascript
+queryObject.set({foo: 'foo'});
+// returns 'foo=foo';
+```
 
 
+### add(object)
+Adds the provided object to the current query string. Returns the new query string if an object was provided, otherwise returns undefined.
+
+```javascript
+// ?foo=foo
+
+queryObject.add({bar: 'bar'});
+// returns 'foo=foo&bar=bar'
+```
+
+### remove(string|array)
+Removes the current property or propeties of the current query string. Returns the new query string or undefined if the param isn't provided as expected.
+
+```javascript
+// ?foo=foo&bar=bar&baz
+
+queryObject.remove('baz');
+// retuns 'foo=foo&bar=bar'
+
+queryObject.remove(['foo', 'bar']);
+// returns ''
+```
+
+### has(string)
+Checks for a property on the query string. Returns a boolean based on the existance of the property. If no property is provided, or the property isn't a string, undefined is returned.
+
+```javascript
+// ?foo
+
+
+queryObject.has('foo');
+// returns true
+
+queryObject.has('bar');
+// returns false
+```
 
 ## Browser Support
 <table>
