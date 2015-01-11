@@ -1,6 +1,6 @@
 # query-object
 
-<!-- [![Build Status](https://travis-ci.org/fernandofleury/query-object.svg?branch=master)](https://travis-ci.org/fernandofleury/query-object) -->
+[![Build Status](https://travis-ci.org/fernandofleury/query-object.svg?branch=master)](https://travis-ci.org/fernandofleury/query-object)
 
 A lightweight lib to work with query strings (1kb uglified)
 
