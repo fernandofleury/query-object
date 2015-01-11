@@ -4,7 +4,7 @@
   "description": "A lightweight lib to work with query strings (1kb uglified)",
   "main": "query-object.js",
   "scripts": {
-    "test": "karma start"
+    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
   },
   "repository": {
     "type": "git",
