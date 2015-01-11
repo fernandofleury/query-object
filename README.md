@@ -1,74 +1,59 @@
 # query-object
 
-Easy url query string manipulation via Objects (using JavaScript)
+A lightweight lib to work with query strings (1kb uglified)
 
 
-## Getting Started
-You can install via NPM:
-
-```javascript
-npm install query-object --save-dev
-```
-
-Then require it on your js:
+## Install
+You can install via npm or via Bower, query-object is also provided as AMD if you use requireJS:
 
 ```javascript
-var queryObject = Require('query-object');
+npm install query-object
+bower install query-object
 ```
 
-Or you can install it via Bower:
+## API
+
+### useHistory (boolean)
+Defines the usage of HTML5HistoryAPI for all methods. 
+DEFAULT: false
 
 ```javascript
-bower install query-object --save
+queryObject.useHistory = true;
 ```
 
-## Available Methods
-
-### get();
-Returns the current query string;
+### setContext()
+High-convenience test method to set current context since we can't reload using old location.search during tests
 
 ```javascript
-// url: http://localhost.com?foo=bar
-queryObject.get();
-// returns {foo: "bar"}
-```
+fakeContext = {};
+fakeContext.location = {};
+queryObject.setContext(fakeContext);
+// returns the new context;
+``` 
 
-### set(Object);
-Accepts an object to set the query string (it will remove the current query string)
 
-```javascript
-queryObject.set({bar: "bar", foo: "foo"});
-// url: http://localhost.com?bar=bar&foo=foo
-```
 
-### add(Object);
-Adds a new property to the current query string;
 
-```javascript
-queryObject.add({baz: "baz"});
-// url: http://localhost.com?bar=bar&foo=foo&baz=baz
-```
+## Browser Support
+<table>
+  <tbody>
+    <tr>
+      <td><img src="http://ie.microsoft.com/testdrive/ieblog/2010/Sep/16_UserExperiencesEvolvingthebluee_23.png" height="40"></td>
+      <td><img src="http://img3.wikia.nocookie.net/__cb20120330024137/logopedia/images/d/d7/Google_Chrome_logo_2011.svg" height="40"></td>
+      <td><img src="http://media.idownloadblog.com/wp-content/uploads/2014/06/Safari-logo-OS-X-Yosemite.png" height="40"></td>
+      <td><img src="http://th09.deviantart.net/fs71/200H/f/2013/185/e/b/firefox_2013_vector_icon_by_thegoldenbox-d6bxsye.png" height="40"></td>
+      <td><img src="http://upload.wikimedia.org/wikipedia/commons/d/d4/Opera_browser_logo_2013.png" height="40"></td>
 
-### remove(String or Array);
-Removes a property or an array of properties based on the parameter.
-
-```javascript
-queryObject.remove("foo");
-// url http://localhost.com?bar=bar&baz=baz
-```
-
-### destroy();
-Clears the current query string
-
-```javascript
-queryObject.destroy();
-// url: http://localhost.com?
-```
-
-## Support
-
-queryObject works on Chrome, Firefox, Safari, Opera and IE 9+ (All tested).
-In fact its really easy to provide a fallback for it, all you have to do is replace the forEach and Object.key functions.
+    </tr>
+    <tr>
+      <td align="center">9+</td>
+      <td align="center">✓</td>
+      <td align="center">✓</td>
+      <td align="center">✓</td>
+      <td align="center">✓</td>
+    </tr>
+  </tbody>
+</table>
 
 ## License
 

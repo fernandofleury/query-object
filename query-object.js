@@ -143,7 +143,7 @@
   /**
    * Removes the current property or propeties of the current query string
    * @param  {String|Array} A string or an array of properties to be removed.
-   * @return {String|Undefined} Returns the new query string or undefined if the param isn't provided as expected.
+   * @returns {String|Undefined} Returns the new query string or undefined if the param isn't provided as expected.
    */
   _self.remove = function(param) {
     if (!param || !param.length) {
@@ -164,6 +164,11 @@
     return _self.set(query);
   };
 
+  /**
+   * Checks for a property on the query string
+   * @param  {String} The property to be checked.
+   * @returns {Boolean|Undefined} Returns a boolean based on the existance of the property. If no property is provided, or the property isn't a string, undefined is returned.
+   */
   _self.has = function(prop) {
     if (!prop || typeof prop !== 'string') {
       return;

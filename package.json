@@ -1,7 +1,7 @@
 {
   "name": "query-object",
   "version": "1.0.1",
-  "description": "Easy url query string manipulation via Objects (using JavaScript)",
+  "description": "A lightweight lib to work with query strings (1kb uglified)",
   "main": "query-object.js",
   "scripts": {
     "test": "karma start"

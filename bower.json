@@ -27,7 +27,6 @@
     ".npmignore",
     "package.json",
     "bower_components",
-    "test",
     "tests"
   ]
 }
