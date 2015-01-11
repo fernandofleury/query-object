@@ -24,13 +24,14 @@ queryObject.useHistory = true;
 ```
 
 ### setContext(object)
-High-convenience test method to set current context since we can't reload using old location.search during tests.
+High-convenience test method to set current context since we can't reload using old location.search during tests. Returns the new context.
 
 ```javascript
 fakeContext = {};
 fakeContext.location = {};
+
 queryObject.setContext(fakeContext);
-// returns the new context;
+// returns {}
 ``` 
 
 ### clear()
