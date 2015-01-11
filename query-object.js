@@ -40,8 +40,13 @@
    * Clears the current query string
    * @returns {undefined}
    */
-  _self.clear = function(prop) {
+  _self.clear = function() {
+    if(_self.useHistory) {
+      history.pushState(null, document.title, location.href.indexOf('?') ? location.href.substr(0, location.href.indexOf('?')) : location.href);
+      return;
+    }
     _ctx.location.search = '';
+    return;
   };
 
   /**

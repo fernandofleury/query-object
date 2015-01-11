@@ -37,14 +37,4 @@ describe('set() method', function() {
       bar: 'bar'
     })).toBe('foo=foo&bar=bar');
   });
-
-  it('should use history via default config to set the query string', function() {
-    queryObject._setContext(window);
-    queryObject.useHistory = true;
-    queryObject.set({
-      foo: 'foo'
-    });
-
-    expect(window.location.search).toBe('?foo=foo');
-  });
 });
