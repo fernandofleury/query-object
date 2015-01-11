@@ -93,7 +93,6 @@ Checks for a property on the query string. Returns a boolean based on the exista
 ```javascript
 // ?foo
 
-
 queryObject.has('foo');
 // returns true
 
