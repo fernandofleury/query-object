@@ -63,7 +63,7 @@
       obj = {};
 
     query.forEach(function(param) {
-      param = param.replace(/%20/g, ' ').split('=');
+      param = param.replace(/%20|\+/g, ' ').split('=');
       obj[decodeURIComponent(param[0])] = (param[1] ? decodeURIComponent(param[
         1]) : undefined);
     });
