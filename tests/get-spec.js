@@ -49,6 +49,14 @@ describe('get() method', function() {
     });
   });
 
+  it('should convert the plus sign for a space', function() {
+    _ctx.location.search = '?foo=bar+baz';
+
+    expect(queryObject.get()).toEqual({
+      foo: 'bar baz'
+    });
+  });
+
   it('should return a list of properties based on an array', function() {
     _ctx.location.search = '?foo=foo&bar&baz=baz';
 

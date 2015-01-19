@@ -16,18 +16,6 @@ describe('query-object main spec', function() {
       expect(queryObject.useHistory).toBe(true);
     });
 
-    it('should change the history method to replaceState', function() {
-      queryObject.historyMethod = 'replaceState';
-
-      expect(queryObject.historyMethod).toBe('replaceState');
-    });
-
-    it('should change the history method to pushState', function() {
-      queryObject.historyMethod = 'pushState';
-
-      expect(queryObject.historyMethod).toBe('pushState');
-    });
-
     it('should have a clear method', function() {
       expect(queryObject.clear).toBeDefined();
     });
