@@ -5,7 +5,7 @@
 
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
-    define(['query-object'], factory);
+    define([], factory);
   } else if (typeof exports === 'object') {
     module.exports = factory();
   } else {
