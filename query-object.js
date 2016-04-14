@@ -173,7 +173,7 @@
     if (!prop || typeof prop !== 'string') {
       return;
     }
-    var query = _self.get();
+    var query = _self.get() || {};
     return query.hasOwnProperty(prop);
   };
 

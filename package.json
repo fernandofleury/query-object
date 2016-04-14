@@ -1,6 +1,6 @@
 {
   "name": "query-object",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A lightweight lib to work with query strings (1kb uglified)",
   "main": "query-object.js",
   "scripts": {
