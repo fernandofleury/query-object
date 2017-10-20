@@ -1,10 +1,9 @@
 .circleci
 coverage
 src
-.eslintrc
+.editorconfig
+.eslintignore
 .gitignore
 .hound.yml
 jest.config.js
-LICENSE
-README.md
 webpack.config.js

@@ -25,7 +25,9 @@
     "manipulation",
     "params",
     "parameters",
-    "qs"
+    "qs",
+    "lightweight",
+    "small"
   ],
   "author": "Fernando Fleury <fernandofleuryg@gmail.com>",
   "license": "MIT",
