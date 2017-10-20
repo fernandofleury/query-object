@@ -2,7 +2,7 @@
   "name": "query-object",
   "version": "2.0.3",
   "description": "A lightweight lib to work with query strings (1kb uglified)",
-  "main": "",
+  "main": "./dist/index.js",
   "scripts": {
     "commit": "git-cz",
     "test": "jest",
