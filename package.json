@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "commit": "git-cz",
-    "test": "",
+    "test": "jest",
     "lint": "standard"
   },
   "repository": {
@@ -47,5 +47,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "standard": {
+    "env": [ "jest" ]
   }
 }
