@@ -1,12 +1,12 @@
 {
   "name": "query-object",
   "version": "2.0.3",
-  "description": "A lightweight lib to work with query strings (1kb uglified)",
+  "description": "A lightweight lib to work with query strings (< 1kb uglified)",
   "main": "./dist/index.js",
   "scripts": {
     "commit": "git-cz",
     "test": "jest",
-    "lint": "standard",
+    "lint": "eslint src/**/*.js",
     "prepublish": "webpack",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
@@ -35,6 +35,7 @@
   "homepage": "https://github.com/fernandofleury/query-object",
   "devDependencies": {
     "commitizen": "^2.9.6",
+    "condition-circle": "^1.5.0",
     "cz-conventional-changelog": "^2.0.0",
     "eslint": "^4.9.0",
     "eslint-config-standard": "^10.2.1",
@@ -52,6 +53,9 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "release": {
+    "verifyConditions": "condition-circle"
   },
   "standard": {
     "env": [
