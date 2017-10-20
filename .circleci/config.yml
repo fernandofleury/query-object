@@ -22,5 +22,5 @@ jobs:
       - run:
           command: npm test
       - run:
-          command: npm run semantic-release
+          command: npm run semantic-release || true
           when: on_success
