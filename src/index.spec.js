@@ -6,4 +6,10 @@ describe('queryObject', () => {
       expect(queryObject.parse).toBeDefined()
     })
   })
+
+  describe('stringify', () => {
+    it('should be defined', () => {
+      expect(queryObject.stringify).toBeDefined()
+    })
+  })
 })
