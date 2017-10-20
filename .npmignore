@@ -1,1 +1,10 @@
+.circleci
 coverage
+src
+.eslintrc
+.gitignore
+.hound.yml
+jest.config.js
+LICENSE
+README.md
+webpack.config.js
