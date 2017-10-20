@@ -4,6 +4,7 @@
   "description": "A lightweight lib to work with query strings (1kb uglified)",
   "main": "",
   "scripts": {
+    "commit": "git-cz",
     "test": ""
   },
   "repository": {
@@ -30,6 +31,13 @@
   },
   "homepage": "https://github.com/fernandofleury/query-object",
   "devDependencies": {
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
     "jest": "^21.2.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
