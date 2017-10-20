@@ -7,7 +7,7 @@
     "commit": "git-cz",
     "test": "jest",
     "lint": "eslint src/**/*.js",
-    "prepublish": "webpack",
+    "prepublishOnly": "NODE_ENV=prod webpack",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
