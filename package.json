@@ -1,13 +1,13 @@
 {
   "name": "query-object",
-  "version": "2.0.3",
+  "version": "3.0.0",
   "description": "A lightweight lib to work with query strings (< 1kb uglified)",
   "main": "./dist/index.js",
   "scripts": {
     "commit": "git-cz",
     "test": "jest",
     "lint": "eslint src/**/*.js",
-    "prepublish": "webpack",
+    "prepublishOnly": "NODE_ENV=prod webpack",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {

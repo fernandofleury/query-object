@@ -21,3 +21,6 @@ jobs:
           command: npm run lint
       - run:
           command: npm test
+      - run:
+          command: npm run semantic-release
+          when: on_success
