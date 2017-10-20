@@ -30,5 +30,6 @@
   },
   "homepage": "https://github.com/fernandofleury/query-object",
   "devDependencies": {
+    "jest": "^21.2.1"
   }
 }
