@@ -3,6 +3,7 @@ coverage
 src
 .editorconfig
 .eslintignore
+.eslintrc
 .gitignore
 .hound.yml
 jest.config.js
