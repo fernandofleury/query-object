@@ -1,12 +1,13 @@
 {
   "name": "query-object",
-  "version": "3.0.0",
+  "version": "2.0.3",
   "description": "A lightweight lib to work with query strings (1kb uglified)",
   "main": "",
   "scripts": {
     "commit": "git-cz",
     "test": "jest",
-    "lint": "standard"
+    "lint": "standard",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -41,7 +42,8 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^21.2.1",
-    "standard": "^10.0.3"
+    "standard": "^10.0.3",
+    "semantic-release": "^8.2.0"
   },
   "config": {
     "commitizen": {
@@ -49,6 +51,8 @@
     }
   },
   "standard": {
-    "env": [ "jest" ]
+    "env": [
+      "jest"
+    ]
   }
 }
