@@ -20,7 +20,10 @@ jobs:
       - run:
           command: npm run lint
       - run:
-          command: npm test
+          command: npm test -- --coverage
+      - run:
+          command: npm run coveralls
+          when: on_success
       - run:
           command: npm run semantic-release || true
           when: on_success
